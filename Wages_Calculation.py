@@ -3,6 +3,11 @@ import pandas as pd
 
 
 ############ Name of the file to be read ############
+<<<<<<< HEAD
+=======
+# C'est votre chemin, il est correct
+Wages_File = '.\Data\Benefits\Annual wages 1990-2024.xlsx'
+>>>>>>> e6dd2e995303f7a080a4c09c7c10b5c0c4f8e80a
 
 
 

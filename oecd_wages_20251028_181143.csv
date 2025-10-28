@@ -1,0 +1,106 @@
+﻿DATAFLOW,REF_AREA: Reference area,MEASURE: Measure,UNIT_MEASURE: Unit of measure,PAY_PERIOD: Pay period,PRICE_BASE: Price base,AGGREGATION_OPERATION: Aggregation operation,SEX: Sex,TIME_PERIOD: Time period,OBS_VALUE,BASE_PER: Base period,OBS_STATUS: Observation status,UNIT_MULT: Unit multiplier,DECIMALS: Decimals
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1990,61810.896,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1991,63557.749,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1992,65246.468,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1993,66510.658,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1994,67587.207,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1995,67541.42,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1996,68387.777,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1997,69740.545,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1998,69926.709,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1999,71601.145,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2000,73914.368,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2001,74292.334,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2002,75791.365,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2003,75271.597,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2004,76148.374,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2005,76530.278,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2006,77569.978,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2007,79675.875,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2008,79223.593,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2009,81692.587,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2010,81739.542,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2011,82194.267,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2012,81359.539,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2013,82342.673,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2014,83690.422,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2015,84159.079,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2016,83934.204,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2017,84984.027,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2018,85458.782,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2019,85635.098,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2020,85931.942,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2021,90159.966,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2022,89854.533,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2023,93059.463,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,"USD_PPP: US dollars, PPP converted",A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2024,94446.74,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1990,26110.079,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1991,27751.508,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1992,29696.448,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1993,31477.517,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1994,32824.69,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1995,33453.963,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1996,34402.878,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1997,35610.113,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1998,36287.231,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,1999,38069.929,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2000,40521.144,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2001,41723.749,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2002,43184.925,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2003,43927.892,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2004,45468.83,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2005,47183.63,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2006,48980.314,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2007,51390.509,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2008,52696.544,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2009,53754.055,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2010,54880.786,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2011,56817.058,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2012,57443.531,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2013,59042.967,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2014,60426.938,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2015,61292.552,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2016,61584.27,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2017,63734.184,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2018,65282.543,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2019,66277.422,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2020,67550.155,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2021,71756.267,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2022,75380.273,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2023,80913.567,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,V: Current prices,MEAN: Mean,_Z: Not applicable,2024,83593.581,,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1990,54708.02,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1991,56254.137,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1992,57748.801,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1993,58867.719,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1994,59820.559,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1995,59780.033,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1996,60529.133,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1997,61726.45,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1998,61891.221,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,1999,63373.243,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2000,65420.646,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2001,65755.179,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2002,67081.952,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2003,66621.912,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2004,67397.936,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2005,67735.954,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2006,68656.179,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2007,70520.081,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2008,70119.772,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2009,72305.046,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2010,72346.606,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2011,72749.078,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2012,72010.27,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2013,72880.429,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2014,74073.304,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2015,74488.106,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2016,74289.073,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2017,75218.258,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2018,75638.457,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2019,75794.512,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2020,76057.245,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2021,79799.414,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2022,79529.079,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2023,82365.721,2024.0,A: Normal value,0: Units,0: Zero
+OECD.ELS.SAE:DSD_EARNINGS@AV_AN_WAGE(1.0),LUX: Luxembourg,WG: Wages,EUR: Euro,A: Annual,Q: Constant prices,MEAN: Mean,_Z: Not applicable,2024,83593.581,2024.0,A: Normal value,0: Units,0: Zero
