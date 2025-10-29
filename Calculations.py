@@ -60,7 +60,7 @@ def get_prop_rate(rate_map, retirement_year):
 
 def plot_results(results_df):
     """
-    Generates a horizontal stacked bar chart of the results, similar to the user's image.
+    Generates a horizontal bar chart showing benefits, contributions, and net benefit.
     The plot is saved as 'pension_lifetime_chart.png'.
     """
     if results_df.empty:
@@ -74,28 +74,33 @@ def plot_results(results_df):
     fig, ax = plt.subplots(figsize=(12, len(results_df) * 0.6 + 2))
 
     # --- Plotting the bars ---
-    # We plot 'Total_Contributions' and 'Net_Benefit' stacked.
-    # The total length of the bar will be Total_Benefits.
     
-    # 1. Plot Total Contributions
+    # 1. Plot Total Benefits (positive, extends to the right)
     ax.barh(
         results_df['Cohort'].astype(str),
-        results_df['Total_Contributions'],
-        label='Total Lifetime Contributions',
-        color=(255/255, 99/255, 132/255, 0.7), # Reddish
-        edgecolor=(255/255, 99/255, 132/255, 1),
-        linewidth=1
+        results_df['Total_Benefits'],
+        label='Total Lifetime Benefits',
+        color=(75/255, 192/255, 192/255, 0.6), # Greenish, semi-transparent
+        edgecolor=(75/255, 192/255, 192/255, 1)
     )
     
-    # 2. Plot Net Wealth Transfer (stacked on top of contributions)
+    # 2. Plot Total Contributions (negative, extends to the left)
+    ax.barh(
+        results_df['Cohort'].astype(str),
+        -results_df['Total_Contributions'],
+        label='Total Lifetime Contributions',
+        color=(255/255, 99/255, 132/255, 0.6), # Reddish, semi-transparent
+        edgecolor=(255/255, 99/255, 132/255, 1)
+    )
+
+    # 3. Plot Net Benefit (overlayed, can be positive or negative)
     ax.barh(
         results_df['Cohort'].astype(str),
         results_df['Net_Benefit'],
-        left=results_df['Total_Contributions'],
-        label='Net Wealth Transfer',
-        color=(75/255, 192/255, 192/255, 0.7), # Greenish
-        edgecolor=(75/255, 192/255, 192/255, 1),
-        linewidth=1
+        label='Net Benefit',
+        color=(54/255, 162/255, 235/255, 0.8), # Bluish, more opaque
+        edgecolor=(54/255, 162/255, 235/255, 1),
+        height=0.5  # Make bar thinner for overlay effect
     )
 
     # --- Formatting the plot ---
@@ -104,17 +109,17 @@ def plot_results(results_df):
     ax.set_title('Lifetime Pension Contributions vs. Benefits by Cohort', fontsize=16, pad=20)
     
     # Add a legend
-    ax.legend(loc='lower right')
+    ax.legend(loc='best')
     
     # Add gridlines
     ax.xaxis.grid(True, linestyle='--', alpha=0.6)
     ax.set_axisbelow(True)
     
-    # Invert y-axis to have older cohorts at the top (like the image)
+    # Invert y-axis to have older cohorts at the top
     ax.invert_yaxis()
     
     # Add a vertical line at x=0
-    ax.axvline(x=0, color='black', linewidth=0.8, linestyle='--')
+    ax.axvline(x=0, color='black', linewidth=1.2)
 
     plt.tight_layout()
     
