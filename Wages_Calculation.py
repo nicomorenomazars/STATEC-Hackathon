@@ -11,7 +11,6 @@ def Wages_Calculation(Wages_File, Income_File):
     Tableau_Output = pd.DataFrame()
     Ratio_dict = {}
     ################ Reading the Excel file ############
-    Income_File_dated_2012 = pd.read_excel(Income_File, header=None)
     tous_les_onglets = pd.read_excel(Income_File, sheet_name=None)
     Wages_data_annually = pd.read_excel(Wages_File, header=0)
     for year in list_years:
@@ -38,3 +37,19 @@ def Wages_Calculation(Wages_File, Income_File):
             Annual_Price=Wages_data_annually[str(year)].values[0]
             Tableau_Output.loc[(Tableau_Output['Year']==year) & (Tableau_Output['Age']==age),'Income_per_year']=Ratio_moyen[age-15]*(Annual_Price)
     return Tableau_Output
+def Reval_avg_An_wages(adapt_salaire_data, Wages_data_annually):
+    #Adapt the actual wages data to  revalorisation factor
+    new_wages_data = pd.DataFrame(columns=Wages_data_annually.columns)
+    returns_list_historical =[]
+    last_wage=Wages_data_annually['1990'].values[0]
+    for year in Wages_data_annually.columns.drop(['Time period']):
+        new_wages_data[year] = adapt_salaire_data.loc[adapt_salaire_data==year, 'Facteur de revalorisation'] * Wages_data_annually[year].values[0]
+        returns_list_historical.append(new_wages_data[year].values[0]/last_wage)
+        last_wage=new_wages_data[year].values[0]
+    return_moyen_historical = sum(returns_list_historical)/len(returns_list_historical)
+    ##############Projection for the future years##############
+    #for year in range(2024, 2051):
+    #    new_wages_data[str(year)] = new_wages_data[str(year-1)] * (return_moyen_historical)
+
+    return new_wages_data
+     
