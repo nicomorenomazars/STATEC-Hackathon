@@ -158,6 +158,13 @@ panel_df = panel_df.dropna(subset=['Life_Expectancy'])
 panel_df['Year'] = panel_df['Year'].astype(int)
 panel_df = panel_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
 
+# Ensure 'Age' is numeric (coerce non-numeric to NaN) so comparison works
+panel_df['Age'] = pd.to_numeric(panel_df['Age'], errors='coerce')
+
+# panel_df.loc[panel_df['Age'] > 90, 'Life_Expectancy'] = 5
+
+
+
 print("Transformation complete.")
 print(panel_df.head())
 panel_df.to_csv('life_expectancy_panel_data.csv', index=False)
@@ -611,7 +618,7 @@ final_combined_df['Adjustment_factor_1984'] = final_combined_df['Adjustment_fact
 print("Applying future rule (for years > 2024)...")
 final_combined_df.loc[final_combined_df['Year'] > 2024, 'Adjustment_factor_1984'] = 981.89
 
-final_combined_df.loc[final_combined_df['Year'] > 1970, 'Adjustment_factor_1984'] = 150
+final_combined_df.loc[final_combined_df['Year'] < 1970, 'Adjustment_factor_1984'] = 150
 
 # --- 8.4 Final Save ---
 # Sort and save
@@ -654,9 +661,18 @@ final_combined_df.to_csv('final_1960-2100.csv', index=False)
 Wages_File = r'Data\Benefits\Annual wages.xlsx'
 Income_File = r'Data\Benefits\Income per year - cleaned_version.xls'
 
-from Wages_Calculation import Wages_Calculation
+wages_File=r'Data\Manually_cleaned_data\Annual wages.xlsx'
+Wages_data_annually = pd.read_excel(wages_File, header=0)
+incomefile=r'Data\Manually_cleaned_data\Income per year - cleaned_version.xls'
+income_data = pd.read_excel(incomefile, sheet_name=None) 
+ 
 
-wage_panel_df = Wages_Calculation(Wages_File, Income_File)
+from Wages_Calculation import *
+
+df_new123 = Reval_avg_An_wages(Wages_data_annually)
+
+wage_panel_df = Wages_Calculation(df_new123, income_data)
+
 print("Final DataFrame with Population, Life Expectancy, Reval Rate, and Index:")
 print(wage_panel_df.head())
 print("...")
@@ -781,6 +797,9 @@ final_combined_df['Salary'] = final_combined_df['Income_per_year'] / final_combi
 # --- 11.6 Final Save ---
 final_combined_df = final_combined_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
 
+
+final_combined_df.loc[final_combined_df['Age'] > 90, 'Life_Expectancy'] = 5
+
 final_combined_df.to_csv('final_dataset_with_wages_1960-2100.csv', index=False)
 
 print("\n--- Merge Complete ---")
@@ -789,3 +808,15 @@ print(final_combined_df.head())
 print("...")
 print(final_combined_df.tail())
 print("Saved to 'final_dataset_with_wages_1960-2100.csv'")
+
+
+
+
+stats = final_combined_df.describe()
+
+# You would then print the 'stats' variable to see the output
+print(stats)
+
+# Get descriptive stats and save to a file
+stats_df = final_combined_df.describe()
+stats_df.to_csv('descriptive_stats.csv')
