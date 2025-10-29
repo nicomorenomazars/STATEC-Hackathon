@@ -664,11 +664,18 @@ final_combined_df.to_csv('final_1960-2100.csv', index=False)
 Wages_File = r'Data\Benefits\Annual wages.xlsx'
 Income_File = r'Data\Benefits\Income per year - cleaned_version.xls'
 
+wages_File=r'C:\Users\nour.oueghlani\Documents\Hackathon\STATEC-Hackathon\Data\Manually_cleaned_data\Annual wages.xlsx'
+Wages_data_annually = pd.read_excel(wages_File, header=0)
+incomefile=r'C:\Users\nour.oueghlani\Documents\Hackathon\STATEC-Hackathon\Data\Manually_cleaned_data\Income per year - cleaned_version.xls'
+income_data = pd.read_excel(incomefile, sheet_name=None) 
+ 
+
+from Wages_Calculation import *
 
 
-from Wages_Calculation import Wages_Calculation
 
-wage_panel_df = Wages_Calculation(Wages_File, Income_File)
+wage_panel_df = Wages_Calculation(Wages_data_annually, income_data)
+
 print("Final DataFrame with Population, Life Expectancy, Reval Rate, and Index:")
 print(wage_panel_df.head())
 print("...")
