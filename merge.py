@@ -158,6 +158,16 @@ panel_df = panel_df.dropna(subset=['Life_Expectancy'])
 panel_df['Year'] = panel_df['Year'].astype(int)
 panel_df = panel_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
 
+# Ensure 'Age' is numeric (coerce non-numeric to NaN) so comparison works
+panel_df['Age'] = pd.to_numeric(panel_df['Age'], errors='coerce')
+
+# Replace missing Life_Expectancy with 5 for ages > 90
+mask = (panel_df['Age'] > 90) & (panel_df['Life_Expectancy'].isna())
+if mask.any():
+    panel_df.loc[mask, 'Life_Expectancy'] = 5
+
+
+
 print("Transformation complete.")
 print(panel_df.head())
 panel_df.to_csv('life_expectancy_panel_data.csv', index=False)
@@ -611,6 +621,8 @@ final_combined_df['Adjustment_factor_1984'] = final_combined_df['Adjustment_fact
 print("Applying future rule (for years > 2024)...")
 final_combined_df.loc[final_combined_df['Year'] > 2024, 'Adjustment_factor_1984'] = 981.89
 
+final_combined_df.loc[final_combined_df['Year'] > 1970, 'Adjustment_factor_1984'] = 150
+
 # --- 8.4 Final Save ---
 # Sort and save
 final_combined_df = final_combined_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
@@ -651,6 +663,8 @@ final_combined_df.to_csv('final_1960-2100.csv', index=False)
 ############ Name of the file to be read ############
 Wages_File = r'Data\Benefits\Annual wages.xlsx'
 Income_File = r'Data\Benefits\Income per year - cleaned_version.xls'
+
+
 
 from Wages_Calculation import Wages_Calculation
 
@@ -773,8 +787,12 @@ final_combined_df = pd.merge(
     how='left'
 )
 
+# Calculate salary by dividing Income_per_year by Revaleurisation_rate
+final_combined_df['Salary'] = final_combined_df['Income_per_year'] / final_combined_df['Revaleurisation_rate']
+
 # --- 11.6 Final Save ---
 final_combined_df = final_combined_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
+
 final_combined_df.to_csv('final_dataset_with_wages_1960-2100.csv', index=False)
 
 print("\n--- Merge Complete ---")

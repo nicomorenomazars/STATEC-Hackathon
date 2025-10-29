@@ -2,7 +2,6 @@ import pandas as pd
 
 
 
-############ Name of the file to be read ############
 
 def Wages_Calculation(Wages_data_annually, tous_les_onglets):
     list_years = list(range(1990,2051))
