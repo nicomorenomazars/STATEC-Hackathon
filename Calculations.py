@@ -82,8 +82,8 @@ def plot_results(results_df):
         results_df['Cohort'].astype(str),
         results_df['Total_Contributions'],
         label='Total Lifetime Contributions',
-        color='rgba(255, 99, 132, 0.7)', # Reddish
-        edgecolor='rgba(255, 99, 132, 1)',
+        color=(255/255, 99/255, 132/255, 0.7), # Reddish
+        edgecolor=(255/255, 99/255, 132/255, 1),
         linewidth=1
     )
     
@@ -93,8 +93,8 @@ def plot_results(results_df):
         results_df['Net_Benefit'],
         left=results_df['Total_Contributions'],
         label='Net Wealth Transfer',
-        color='rgba(75, 192, 192, 0.7)', # Greenish
-        edgecolor='rgba(75, 192, 192, 1)',
+        color=(75/255, 192/255, 192/255, 0.7), # Greenish
+        edgecolor=(75/255, 192/255, 192/255, 1),
         linewidth=1
     )
 
