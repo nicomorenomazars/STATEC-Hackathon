@@ -146,7 +146,8 @@ def calculate_pension_wealth():
     required_cols = [
         'Birth_Year', 'Year', 'Population', 'Life_Expectancy', 
         'Retirement_age', 'Contribution_rate', '1999_dummy', 
-        'Reference_amount_1984', 'Revaleurisation_rate', 'Salary'
+        'Reference_amount_1984', 'Revaleurisation_rate', 'Salary',
+        'Adjustment_factor_1984'
     ]
     
     # Check if all required columns exist
@@ -252,11 +253,11 @@ def calculate_pension_wealth():
             reference_amount = retirement_row.iloc[0]['Reference_amount_1984']
             
             # 1. Fixed Increases
-            fixed_increases = (N_years / 40) * reference_amount * FIXED_INCREASE_RATE
+            fixed_increases = (N_years / 40) * reference_amount
             
             # 2. Proportional Increases
             sum_adjusted_earnings = (
-                working_life_data['Salary'] / working_life_data['Revaleurisation_rate']
+                working_life_data['Salary'] / working_life_data['Adjustment_factor_1984'] / working_life_data['Revaleurisation_rate']
             ).sum()
             
             prop_rate = get_prop_rate(PROP_RATE_TABLE, Y_retire)
