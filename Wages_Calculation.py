@@ -2,9 +2,7 @@ import pandas as pd
 
 
 
-############ Name of the file to be read ############
-Wages_File = r'C:\Users\nour.oueghlani\Documents\Hackathon\STATEC-Hackathon\Data\Benefits\Annual wages.xlsx'
-Income_File = r'C:\Users\nour.oueghlani\Documents\Hackathon\STATEC-Hackathon\Data\Benefits\Income per year - cleaned_version.xls'
+
 def Wages_Calculation(Wages_data_annually, tous_les_onglets):
     list_years = list(range(1990,2051))
     list_ages = list(range(15,66))

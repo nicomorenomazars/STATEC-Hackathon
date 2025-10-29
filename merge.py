@@ -158,6 +158,16 @@ panel_df = panel_df.dropna(subset=['Life_Expectancy'])
 panel_df['Year'] = panel_df['Year'].astype(int)
 panel_df = panel_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
 
+# Ensure 'Age' is numeric (coerce non-numeric to NaN) so comparison works
+panel_df['Age'] = pd.to_numeric(panel_df['Age'], errors='coerce')
+
+# Replace missing Life_Expectancy with 5 for ages > 90
+mask = (panel_df['Age'] > 90) & (panel_df['Life_Expectancy'].isna())
+if mask.any():
+    panel_df.loc[mask, 'Life_Expectancy'] = 5
+
+
+
 print("Transformation complete.")
 print(panel_df.head())
 panel_df.to_csv('life_expectancy_panel_data.csv', index=False)
@@ -653,6 +663,8 @@ final_combined_df.to_csv('final_1960-2100.csv', index=False)
 ############ Name of the file to be read ############
 Wages_File = r'Data\Benefits\Annual wages.xlsx'
 Income_File = r'Data\Benefits\Income per year - cleaned_version.xls'
+
+
 
 from Wages_Calculation import Wages_Calculation
 
