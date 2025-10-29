@@ -10,7 +10,7 @@ import os
 
 # This is the path to your panel data CSV file.
 # Make sure the file contains all required columns.
-FILE_PATH = "your_data.csv"  # <<< SET THIS
+FILE_PATH = "final_dataset_with_wages_1960-2100.csv"  # <<< SET THIS
 
 # Percentage of the representative agent considered a public servant
 # This applies ONLY to cohorts where 1999_dummy = 1.
@@ -144,7 +144,7 @@ def calculate_pension_wealth():
     # --- 2. Data Preparation ---
     # List of columns required for the calculation
     required_cols = [
-        'Year_of_birth', 'Year', 'Population', 'Life_Expectancy', 
+        'Birth_Year', 'Year', 'Population', 'Life_Expectancy', 
         'Retirement_age', 'Contribution_rate', '1999_dummy', 
         'Reference_amount_1984', 'Revaleurisation_rate', 'Salary'
     ]
@@ -159,7 +159,7 @@ def calculate_pension_wealth():
 
     # Convert columns to numeric, handling any errors
     for col in required_cols:
-        if col not in ['Year_of_birth']: # Keep cohort as object for grouping
+        if col not in ['Birth_Year']: # Keep cohort as object for grouping
             df[col] = pd.to_numeric(df[col], errors='coerce')
             
     # Drop rows where essential data is missing
@@ -167,8 +167,8 @@ def calculate_pension_wealth():
     print("Data loaded and validated successfully.")
 
     # --- 3. Process Data by Cohort ---
-    print("Grouping data by cohort ('Year_of_birth')...")
-    grouped = df.groupby('Year_of_birth')
+    print("Grouping data by cohort ('Birth_Year')...")
+    grouped = df.groupby('Birth_Year')
     cohort_results = []
     
     print(f"Found {len(grouped)} cohorts. Starting calculations...")
@@ -189,13 +189,21 @@ def calculate_pension_wealth():
                 
             work_start_row = work_start_row.iloc[0]
             
-            retirement_age = work_start_row['Retirement_age']
-            life_expectancy = work_start_row['Life_Expectancy']
+            # Read float values from data
+            retirement_age_float = work_start_row['Retirement_age']
+            life_expectancy_float = work_start_row['Life_Expectancy']
             dummy_1999 = work_start_row['1999_dummy']
             
+            # --- FIX: Round ages to nearest integer ---
+            # This converts float ages (e.g., 61.4) to integers (e.g., 61)
+            # to ensure all year calculations result in integers.
+            retirement_age = round(retirement_age_float)
+            life_expectancy = round(life_expectancy_float)
+            
+            # These calculations will now produce integer years
             Y_retire = cohort + retirement_age
             Y_end_work = Y_retire - 1
-            Y_end_life = cohort + life_expectancy
+            Y_end_life = Y_start_work + life_expectancy
             
             print(f"  - Cohort Lifecycle: Born {cohort} | Work Start {Y_start_work} | Retire {Y_retire} | Life End {Y_end_life}")
 
@@ -235,6 +243,7 @@ def calculate_pension_wealth():
             # --- A. IAP Private ("Régime Général") ---
             
             # Get data from the year of retirement
+            # This lookup will now use an integer Y_retire
             retirement_row = lifespan_data[lifespan_data['Year'] == Y_retire]
             if retirement_row.empty:
                 print(f"  - SKIPPING: No data found for retirement year {Y_retire}.")
@@ -258,6 +267,7 @@ def calculate_pension_wealth():
             # --- B. IAP Public Old ("Régime Spécial Transitoire") ---
             
             # Get data from the final working year
+            # This lookup will now use an integer Y_end_work
             final_salary_row = working_life_data[working_life_data['Year'] == Y_end_work]
             if final_salary_row.empty:
                 print(f"  - SKIPPING: No data found for final working year {Y_end_work}.")
@@ -273,7 +283,8 @@ def calculate_pension_wealth():
                     (PCT_PUBLIC * dummy_1999) * iap_public_old
             
             # --- Stage 2: Sum IAP Over Retirement ---
-            num_retire_years = life_expectancy - retirement_age
+            # This calculation will now use the rounded integer ages
+            num_retire_years = (WORK_START_AGE + life_expectancy) - retirement_age
             if num_retire_years < 0:
                 num_retire_years = 0
                 print(f"  - WARNING: Life Expectancy ({life_expectancy}) is less than Retirement Age ({retirement_age}). Setting retirement years to 0.")
@@ -286,11 +297,22 @@ def calculate_pension_wealth():
             print(f"  - Net Benefit: {net_benefit:,.0f}")
 
             # --- F. Store Results ---
+            # Disaggregate benefits for reporting
+            weight_private = 1 - PCT_PUBLIC * dummy_1999
+            weight_public = PCT_PUBLIC * dummy_1999
+            
+            lifetime_fixed_benefit = fixed_increases * weight_private * num_retire_years
+            lifetime_prop_benefit = proportional_increases * weight_private * num_retire_years
+            lifetime_public_benefit = iap_public_old * weight_public * num_retire_years
+
             cohort_results.append({
                 'Cohort': cohort,
                 'Total_Contributions': total_contributions,
                 'Total_Benefits': total_lifetime_benefits,
-                'Net_Benefit': net_benefit
+                'Net_Benefit': net_benefit,
+                'Lifetime_Fixed_Benefit': lifetime_fixed_benefit,
+                'Lifetime_Prop_Benefit': lifetime_prop_benefit,
+                'Lifetime_Public_Benefit': lifetime_public_benefit
             })
             
         except Exception as e:
@@ -332,4 +354,5 @@ if __name__ == "__main__":
         print("Please edit the script to add retirement years and rates.")
         
     calculate_pension_wealth()
+
 
