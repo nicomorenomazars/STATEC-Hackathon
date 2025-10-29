@@ -280,8 +280,8 @@ def calculate_pension_wealth():
             
             # --- Core IAP Formula (Weighted Average) ---
             # This handles all cases as described in the logic
-            iap_C = (1 - PCT_PUBLIC * dummy_1999) * iap_private + \
-                    (PCT_PUBLIC * dummy_1999) * iap_public_old
+            iap_C = (1 - PCT_PUBLIC * (1 - dummy_1999)) * iap_private + \
+                    (PCT_PUBLIC * (1 - dummy_1999)) * iap_public_old
             
             # --- Stage 2: Sum IAP Over Retirement ---
             # This calculation will now use the rounded integer ages
@@ -299,8 +299,8 @@ def calculate_pension_wealth():
 
             # --- F. Store Results ---
             # Disaggregate benefits for reporting
-            weight_private = 1 - PCT_PUBLIC * dummy_1999
-            weight_public = PCT_PUBLIC * dummy_1999
+            weight_private = 1 - PCT_PUBLIC * (1 - dummy_1999)
+            weight_public = PCT_PUBLIC * (1 - dummy_1999)
             
             lifetime_fixed_benefit = fixed_increases * weight_private * num_retire_years
             lifetime_prop_benefit = proportional_increases * weight_private * num_retire_years
