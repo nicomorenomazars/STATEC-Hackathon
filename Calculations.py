@@ -297,11 +297,22 @@ def calculate_pension_wealth():
             print(f"  - Net Benefit: {net_benefit:,.0f}")
 
             # --- F. Store Results ---
+            # Disaggregate benefits for reporting
+            weight_private = 1 - PCT_PUBLIC * dummy_1999
+            weight_public = PCT_PUBLIC * dummy_1999
+            
+            lifetime_fixed_benefit = fixed_increases * weight_private * num_retire_years
+            lifetime_prop_benefit = proportional_increases * weight_private * num_retire_years
+            lifetime_public_benefit = iap_public_old * weight_public * num_retire_years
+
             cohort_results.append({
                 'Cohort': cohort,
                 'Total_Contributions': total_contributions,
                 'Total_Benefits': total_lifetime_benefits,
-                'Net_Benefit': net_benefit
+                'Net_Benefit': net_benefit,
+                'Lifetime_Fixed_Benefit': lifetime_fixed_benefit,
+                'Lifetime_Prop_Benefit': lifetime_prop_benefit,
+                'Lifetime_Public_Benefit': lifetime_public_benefit
             })
             
         except Exception as e:
