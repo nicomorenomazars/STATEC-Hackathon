@@ -15,7 +15,7 @@ FILE_PATH = "final_dataset_with_wages_1960-2100.csv"  # <<< SET THIS
 # Percentage of the representative agent considered a public servant
 # This applies ONLY to cohorts where 1999_dummy = 1.
 # E.g., 0.25 for 25%.
-PCT_PUBLIC = 0.25
+PCT_PUBLIC = 0.15
 
 # The assumed age when a person in a cohort starts working.
 # E.g., 20.
@@ -60,61 +60,74 @@ def get_prop_rate(rate_map, retirement_year):
 
 def plot_results(results_df):
     """
-    Generates a horizontal stacked bar chart of the results, similar to the user's image.
+    Generates a horizontal bar chart showing benefits, contributions, and net benefit.
     The plot is saved as 'pension_lifetime_chart.png'.
     """
     if results_df.empty:
         print("No data to plot.")
         return
 
-    # Sort by cohort for a clean plot
-    results_df = results_df.sort_values(by='Cohort')
+    # Filter cohorts and create 5-year groups for plotting
+    plot_data = results_df[results_df['Cohort'] <= 2025].copy()
+    start_year = ((plot_data['Cohort'] - 1) // 5) * 5 + 1
+    plot_data['Cohort_Group'] = start_year.astype(str) + '-' + (start_year + 4).astype(str)
+    
+    # Aggregate data by group, taking the mean
+    agg_df = plot_data.groupby('Cohort_Group').mean().reset_index()
+
+    # Sort by cohort group for a clean plot
+    agg_df = agg_df.sort_values(by='Cohort_Group')
 
     # Create the figure and axes
-    fig, ax = plt.subplots(figsize=(12, len(results_df) * 0.6 + 2))
+    fig, ax = plt.subplots(figsize=(12, len(agg_df) * 0.8 + 2))
 
     # --- Plotting the bars ---
-    # We plot 'Total_Contributions' and 'Net_Benefit' stacked.
-    # The total length of the bar will be Total_Benefits.
     
-    # 1. Plot Total Contributions
+    # 1. Plot Total Benefits (positive, extends to the right)
     ax.barh(
-        results_df['Cohort'].astype(str),
-        results_df['Total_Contributions'],
-        label='Total Lifetime Contributions',
-        color='rgba(255, 99, 132, 0.7)', # Reddish
-        edgecolor='rgba(255, 99, 132, 1)',
-        linewidth=1
+        agg_df['Cohort_Group'],
+        agg_df['Total_Benefits'],
+        label='Total Lifetime Benefits',
+        color=(75/255, 192/255, 192/255, 0.6), # Greenish, semi-transparent
+        edgecolor=(75/255, 192/255, 192/255, 1)
     )
     
-    # 2. Plot Net Wealth Transfer (stacked on top of contributions)
+    # 2. Plot Total Contributions (negative, extends to the left)
     ax.barh(
-        results_df['Cohort'].astype(str),
-        results_df['Net_Benefit'],
-        left=results_df['Total_Contributions'],
-        label='Net Wealth Transfer',
-        color='rgba(75, 192, 192, 0.7)', # Greenish
-        edgecolor='rgba(75, 192, 192, 1)',
-        linewidth=1
+        agg_df['Cohort_Group'],
+        -agg_df['Total_Contributions'],
+        label='Total Lifetime Contributions',
+        color=(255/255, 99/255, 132/255, 0.6), # Reddish, semi-transparent
+        edgecolor=(255/255, 99/255, 132/255, 1)
+    )
+
+    # 3. Plot Net Benefit (overlayed, can be positive or negative)
+    ax.barh(
+        agg_df['Cohort_Group'],
+        agg_df['Net_Benefit'],
+        label='Net Benefit',
+        color=(54/255, 162/255, 235/255, 0.8), # Bluish, more opaque
+        edgecolor=(54/255, 162/255, 235/255, 1),
+        height=0.5  # Make bar thinner for overlay effect
     )
 
     # --- Formatting the plot ---
     ax.set_xlabel('Lifetime Amount (in 1984 €)', fontsize=12)
-    ax.set_ylabel('Cohort (Year of Birth)', fontsize=12)
+    ax.set_ylabel('Cohort Group (Year of Birth)', fontsize=12)
     ax.set_title('Lifetime Pension Contributions vs. Benefits by Cohort', fontsize=16, pad=20)
     
     # Add a legend
-    ax.legend(loc='lower right')
+    ax.legend(loc='best')
     
     # Add gridlines
     ax.xaxis.grid(True, linestyle='--', alpha=0.6)
     ax.set_axisbelow(True)
     
-    # Invert y-axis to have older cohorts at the top (like the image)
+    # Invert y-axis to have older cohorts at the top
     ax.invert_yaxis()
     
     # Add a vertical line at x=0
-    ax.axvline(x=0, color='black', linewidth=0.8, linestyle='--')
+    ax.axvline(x=0, color='black', linewidth=1.2)
 
     plt.tight_layout()
     
@@ -146,7 +159,8 @@ def calculate_pension_wealth():
     required_cols = [
         'Birth_Year', 'Year', 'Population', 'Life_Expectancy', 
         'Retirement_age', 'Contribution_rate', '1999_dummy', 
-        'Reference_amount_1984', 'Revaleurisation_rate', 'Salary'
+        'Reference_amount_1984', 'Revaleurisation_rate', 'Salary',
+        'Adjustment_factor_1984'
     ]
     
     # Check if all required columns exist
@@ -252,11 +266,11 @@ def calculate_pension_wealth():
             reference_amount = retirement_row.iloc[0]['Reference_amount_1984']
             
             # 1. Fixed Increases
-            fixed_increases = (N_years / 40) * reference_amount * FIXED_INCREASE_RATE
+            fixed_increases = (N_years / 40) * reference_amount
             
             # 2. Proportional Increases
             sum_adjusted_earnings = (
-                working_life_data['Salary'] / working_life_data['Revaleurisation_rate']
+                working_life_data['Salary'] / working_life_data['Adjustment_factor_1984'] / working_life_data['Revaleurisation_rate']
             ).sum()
             
             prop_rate = get_prop_rate(PROP_RATE_TABLE, Y_retire)
@@ -279,8 +293,8 @@ def calculate_pension_wealth():
             
             # --- Core IAP Formula (Weighted Average) ---
             # This handles all cases as described in the logic
-            iap_C = (1 - PCT_PUBLIC * dummy_1999) * iap_private + \
-                    (PCT_PUBLIC * dummy_1999) * iap_public_old
+            iap_C = (1 - PCT_PUBLIC * (1 - dummy_1999)) * iap_private + \
+                    (PCT_PUBLIC * (1 - dummy_1999)) * iap_public_old
             
             # --- Stage 2: Sum IAP Over Retirement ---
             # This calculation will now use the rounded integer ages
@@ -298,8 +312,8 @@ def calculate_pension_wealth():
 
             # --- F. Store Results ---
             # Disaggregate benefits for reporting
-            weight_private = 1 - PCT_PUBLIC * dummy_1999
-            weight_public = PCT_PUBLIC * dummy_1999
+            weight_private = 1 - PCT_PUBLIC * (1 - dummy_1999)
+            weight_public = PCT_PUBLIC * (1 - dummy_1999)
             
             lifetime_fixed_benefit = fixed_increases * weight_private * num_retire_years
             lifetime_prop_benefit = proportional_increases * weight_private * num_retire_years
