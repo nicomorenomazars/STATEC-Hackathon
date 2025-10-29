@@ -203,7 +203,7 @@ def calculate_pension_wealth():
             # These calculations will now produce integer years
             Y_retire = cohort + retirement_age
             Y_end_work = Y_retire - 1
-            Y_end_life = cohort + life_expectancy
+            Y_end_life = Y_start_work + life_expectancy
             
             print(f"  - Cohort Lifecycle: Born {cohort} | Work Start {Y_start_work} | Retire {Y_retire} | Life End {Y_end_life}")
 
@@ -284,7 +284,7 @@ def calculate_pension_wealth():
             
             # --- Stage 2: Sum IAP Over Retirement ---
             # This calculation will now use the rounded integer ages
-            num_retire_years = life_expectancy - retirement_age
+            num_retire_years = (WORK_START_AGE + life_expectancy) - retirement_age
             if num_retire_years < 0:
                 num_retire_years = 0
                 print(f"  - WARNING: Life Expectancy ({life_expectancy}) is less than Retirement Age ({retirement_age}). Setting retirement years to 0.")
