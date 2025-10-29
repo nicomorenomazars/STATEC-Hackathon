@@ -611,6 +611,8 @@ final_combined_df['Adjustment_factor_1984'] = final_combined_df['Adjustment_fact
 print("Applying future rule (for years > 2024)...")
 final_combined_df.loc[final_combined_df['Year'] > 2024, 'Adjustment_factor_1984'] = 981.89
 
+final_combined_df.loc[final_combined_df['Year'] > 1970, 'Adjustment_factor_1984'] = 150
+
 # --- 8.4 Final Save ---
 # Sort and save
 final_combined_df = final_combined_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
@@ -773,8 +775,12 @@ final_combined_df = pd.merge(
     how='left'
 )
 
+# Calculate salary by dividing Income_per_year by Revaleurisation_rate
+final_combined_df['Salary'] = final_combined_df['Income_per_year'] / final_combined_df['Revaleurisation_rate']
+
 # --- 11.6 Final Save ---
 final_combined_df = final_combined_df.sort_values(by=['Age', 'Year']).reset_index(drop=True)
+
 final_combined_df.to_csv('final_dataset_with_wages_1960-2100.csv', index=False)
 
 print("\n--- Merge Complete ---")
