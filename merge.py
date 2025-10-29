@@ -599,7 +599,7 @@ final_combined_df = pd.merge(
 )
 
 # --- 8.3 Fill Missing Values Based on Rules ---
-# We apply the rules in a specific order to get the desired outcome.
+# We apply the rules in a specific order to get the desired outcome
 
 # 1. Forward-fill: This fills all NaNs *after* 1983 with the 1983 value.
 #    (e.g., 1984-2100 will be filled with the 1983 value).
