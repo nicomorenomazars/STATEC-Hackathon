@@ -21,6 +21,10 @@ PCT_PUBLIC = 0.25
 # E.g., 20.
 WORK_START_AGE = 20
 
+# The statutory rate applied to the fixed (duration-based) part of the
+# private pension. As you noted, this is ~24.85%.
+FIXED_INCREASE_RATE = 0.2485 # <<< ADDED THIS
+
 # This table maps a retirement year to the "Proportional Rate" used
 # in the private pension calculation. This is the "Taux de majoration proportionnelle".
 # The script will find the closest year if an exact match is not found.
@@ -239,7 +243,7 @@ def calculate_pension_wealth():
             reference_amount = retirement_row.iloc[0]['Reference_amount_1984']
             
             # 1. Fixed Increases
-            fixed_increases = (N_years / 40) * reference_amount
+            fixed_increases = (N_years / 40) * reference_amount * FIXED_INCREASE_RATE
             
             # 2. Proportional Increases
             sum_adjusted_earnings = (
@@ -328,3 +332,4 @@ if __name__ == "__main__":
         print("Please edit the script to add retirement years and rates.")
         
     calculate_pension_wealth()
+
