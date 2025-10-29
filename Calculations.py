@@ -67,18 +67,26 @@ def plot_results(results_df):
         print("No data to plot.")
         return
 
-    # Sort by cohort for a clean plot
-    results_df = results_df.sort_values(by='Cohort')
+    # Filter cohorts and create 5-year groups for plotting
+    plot_data = results_df[results_df['Cohort'] <= 2025].copy()
+    start_year = ((plot_data['Cohort'] - 1) // 5) * 5 + 1
+    plot_data['Cohort_Group'] = start_year.astype(str) + '-' + (start_year + 4).astype(str)
+    
+    # Aggregate data by group, taking the mean
+    agg_df = plot_data.groupby('Cohort_Group').mean().reset_index()
+
+    # Sort by cohort group for a clean plot
+    agg_df = agg_df.sort_values(by='Cohort_Group')
 
     # Create the figure and axes
-    fig, ax = plt.subplots(figsize=(12, len(results_df) * 0.6 + 2))
+    fig, ax = plt.subplots(figsize=(12, len(agg_df) * 0.8 + 2))
 
     # --- Plotting the bars ---
     
     # 1. Plot Total Benefits (positive, extends to the right)
     ax.barh(
-        results_df['Cohort'].astype(str),
-        results_df['Total_Benefits'],
+        agg_df['Cohort_Group'],
+        agg_df['Total_Benefits'],
         label='Total Lifetime Benefits',
         color=(75/255, 192/255, 192/255, 0.6), # Greenish, semi-transparent
         edgecolor=(75/255, 192/255, 192/255, 1)
@@ -86,8 +94,8 @@ def plot_results(results_df):
     
     # 2. Plot Total Contributions (negative, extends to the left)
     ax.barh(
-        results_df['Cohort'].astype(str),
-        -results_df['Total_Contributions'],
+        agg_df['Cohort_Group'],
+        -agg_df['Total_Contributions'],
         label='Total Lifetime Contributions',
         color=(255/255, 99/255, 132/255, 0.6), # Reddish, semi-transparent
         edgecolor=(255/255, 99/255, 132/255, 1)
@@ -95,8 +103,8 @@ def plot_results(results_df):
 
     # 3. Plot Net Benefit (overlayed, can be positive or negative)
     ax.barh(
-        results_df['Cohort'].astype(str),
-        results_df['Net_Benefit'],
+        agg_df['Cohort_Group'],
+        agg_df['Net_Benefit'],
         label='Net Benefit',
         color=(54/255, 162/255, 235/255, 0.8), # Bluish, more opaque
         edgecolor=(54/255, 162/255, 235/255, 1),
@@ -105,7 +113,7 @@ def plot_results(results_df):
 
     # --- Formatting the plot ---
     ax.set_xlabel('Lifetime Amount (in 1984 €)', fontsize=12)
-    ax.set_ylabel('Cohort (Year of Birth)', fontsize=12)
+    ax.set_ylabel('Cohort Group (Year of Birth)', fontsize=12)
     ax.set_title('Lifetime Pension Contributions vs. Benefits by Cohort', fontsize=16, pad=20)
     
     # Add a legend
