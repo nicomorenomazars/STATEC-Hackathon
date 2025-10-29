@@ -620,7 +620,7 @@ final_combined_df.loc[final_combined_df['Year'] > 2024, 'Adjustment_factor_1984'
 
 final_combined_df.loc[final_combined_df['Year'] < 1970, 'Adjustment_factor_1984'] = 150
 
-final_combined_df['Adjustment_factor_1984'] = final_combined_df['Adjustment_factor_1984'] / 432.37
+# final_combined_df['Adjustment_factor_1984'] = final_combined_df['Adjustment_factor_1984'] / 432.37
 
 # --- 8.4 Final Save ---
 # Sort and save
