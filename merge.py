@@ -812,3 +812,11 @@ print("Saved to 'final_dataset_with_wages_1960-2100.csv'")
 
 
 
+stats = final_combined_df.describe()
+
+# You would then print the 'stats' variable to see the output
+print(stats)
+
+# Get descriptive stats and save to a file
+stats_df = final_combined_df.describe()
+stats_df.to_csv('descriptive_stats.csv')
