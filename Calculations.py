@@ -15,7 +15,7 @@ FILE_PATH = "final_dataset_with_wages_1960-2100.csv"  # <<< SET THIS
 # Percentage of the representative agent considered a public servant
 # This applies ONLY to cohorts where 1999_dummy = 1.
 # E.g., 0.25 for 25%.
-PCT_PUBLIC = 0.25
+PCT_PUBLIC = 0.15
 
 # The assumed age when a person in a cohort starts working.
 # E.g., 20.
